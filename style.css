@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.canvas-container {
+    position: relative;
+    display: inline-block;   /* So that the health bar gets inline with the canvas DIV*/
+    justify-content: center;
+}
+
+.Bars-Interface {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 20px;
+}
+
+
+/* Timer */
+#timer {
+    background-color: red;
+    height: 100px;
+    width: 100px;
+    flex-shrink: 0;     /* 0 means FALSE */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ENEMY HEALTH BAR */
+.parent-enemyHealth {
+    position: relative;
+    height: 30px;
+    width: 100%;
+}
+
+#enemy-health-bg {
+    background-color: yellow;
+    height: 30px;
+}
+
+#enemyHealth {
+    position: absolute;
+    background: blue;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: 0.1s ease-in-out;
+}
+
+
+/* PLAYER HEALTH BAR */
+.parent-playerHealth {
+    position: relative;
+    height: 30px;
+    width: 100%;
+}
+
+#player-health-bg {
+    background-color: yellow;
+    height: 30px;
+}
+
+#playerHealth {
+    width: 100%;
+    position: absolute;
+    background: blue;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    right: 0;
+    transition: 0.1s ease-in-out;
+}
+
+
+
+/* Game Status */
+
+#gameStatus {
+    position: absolute;
+    color: white;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    
+}
+
+
