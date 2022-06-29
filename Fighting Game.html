@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>The-Last-One</title>
+</head>
+<body>
+
+    <!-- Red Container Div   (whole Canvas or BODY) -->
+    <div class="canvas-container">
+
+            <div class="Bars-Interface">
+
+                 <!-- Player Health -->
+                <div class="parent-playerHealth">
+                    <div id="player-health-bg"></div>
+                    <div id="playerHealth"></div>
+                </div>    
+                
+                
+                <div id="timer">10</div> <!-- Timer -->
+                
+                
+                 <!-- Enemy Health -->
+                <div class="parent-enemyHealth">
+                    <div id="enemy-health-bg"></div>
+                    <div id="enemyHealth"></div>      <!-- Will show the health decreasing --> 
+                </div> 
+                
+            
+            </div>
+
+        
+        <div id="gameStatus">Tie</div>    
+
+        <canvas></canvas>
+    </div>    
+    
+    <!-- Make sure to put them in correct order -->
+    <script src="js/utils.js"></script>
+    <script src="js/classes.js"></script>
+    <script src="js/index.js"></script>
+    
+</body>
+</html>
