@@ -1,6 +1,14 @@
 // Class
+
+
 class Sprite {
-    constructor({position, ImageSrc, scale = 1, framesMax = 1}) {
+    constructor({
+        position, 
+        ImageSrc, 
+        scale = 1, 
+        framesMax = 1, 
+        offset = { x:0, y:0}
+    }) {
         this.position = position;
         this.height = 150;
         this.width = 50;
@@ -12,6 +20,7 @@ class Sprite {
         this.framesCurrent = 0     // means static
         this.framesElapsed = 0;
         this.framesHold = 5;    // The lower the value, the faster the animation
+        this.offset = offset;
     }
     
 
@@ -23,17 +32,15 @@ class Sprite {
             this.image.width / this.framesMax,  // The end position of the cropping x-axis
             this.image.height,                  // The end position of the cropping x-axis
 
-            this.position.x,    // Image's start location x-axis
-            this.position.y,    // Image's start location y-axis
+            this.position.x - this.offset.x,    // Image's start location x-axis
+            this.position.y - this.offset.y,    // Image's start location y-axis
             (this.image.width / this.framesMax) * this.scale ,      // Image's end x-axis
             this.image.height * this.scale       // Image's end y-axis
-            );
+        );
     }
 
-    update() {
-        this.draw();
 
-        // animating shop
+    animateFrames() {
         this.framesElapsed++
         if (this.framesElapsed % this.framesHold === 0) {       // means remainder 0
             if (this.framesCurrent < this.framesMax - 1) {
@@ -45,11 +52,28 @@ class Sprite {
         }    
     }
 
+    update() {
+        this.draw();
+        this.animateFrames();
+    }
+
 }
 
 
-class Fighter {
-    constructor({position, velocity, color, offset}) {
+class Fighter extends Sprite{
+    constructor({
+        position, 
+        velocity, 
+        color, 
+        ImageSrc, 
+        scale = 1, 
+        framesMax = 1, 
+        offset = { x:0, y:0 },
+        sprites
+    }) {
+        
+        super({position, ImageSrc, scale, framesMax, offset})
+
         this.position = position;
         this.velocity = velocity;
         this.height = 150;
@@ -60,30 +84,33 @@ class Fighter {
                 x: this.position.x,
                 y: this.position.y
             } ,
-            offset: offset,
+            offset:{
+                x:0,
+                y:0
+            },
             width: 100,
             height: 50
         }
         this.color = color;
         this.isAttacking;
         this.health = 100;
-    }
+        this.framesCurrent = 0     // means static
+        this.framesElapsed = 0;
+        this.framesHold = 5;    // The lower the value, the faster the animation
+        this.offset = offset;
+        this.sprites = sprites
 
 
-    draw() {
-        c.fillStyle = this.color;
-        c.fillRect(this.position.x, this.position.y, this.width, this.height)
-
-        // AttackBox
-        if (this.isAttacking == true) {
-            c.fillStyle = 'green';
-            c.fillRect(this.attackBox.position.x, this.attackBox.position.y, this.attackBox.width, this.attackBox.height)
+        for (const sprite in this.sprites) {
+            sprites[sprite].image = new Image();
+            sprites[sprite].image.src = sprites[sprite].ImageSrc;
         }
     }
 
+
     update() {
         this.draw();
-
+        this.animateFrames();
         // AttackBox position updates
         this.attackBox.position.x = this.position.x + this.attackBox.offset.x;
         this.attackBox.position.y = this.position.y;
@@ -108,3 +135,10 @@ class Fighter {
         },100)
     }
 }
+
+
+
+
+
+
+
