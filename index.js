@@ -48,15 +48,15 @@ const player = new Fighter({
         x:0,
         y:0
     },
-    
-    ImageSrc: 'assets/samuraiMack/Idle.png',
-    framesMax: 8,
-    scale:2.5,
 
     offset:{
         x:200,
         y:157
     },
+
+    ImageSrc: 'assets/samuraiMack/Idle.png',
+    framesMax: 8,
+    scale:2.5,
 
     sprites:{
         idle:{
@@ -66,6 +66,18 @@ const player = new Fighter({
         run:{
             ImageSrc: 'assets/samuraiMack/Run.png',
             framesMax:8,
+        },
+        jump:{
+            ImageSrc: 'assets/samuraiMack/Jump.png',
+            framesMax:2,
+        },
+        fall:{
+            ImageSrc: 'assets/samuraiMack/Fall.png',
+            framesMax:2,
+        },
+        attack1:{
+            ImageSrc: 'assets/samuraiMack/Attack1.png',
+            framesMax:6,
         }
     }
 })
@@ -85,8 +97,35 @@ const enemy = new Fighter({
     color: 'blue',
 
     offset:{
-        x:-50,
-        y:0
+        x:200,
+        y:167
+    },
+
+    ImageSrc: 'assets/kenji/Idle.png',
+    framesMax: 4,
+    scale:2.5,
+
+    sprites:{
+        idle:{
+            ImageSrc: 'assets/kenji/Idle.png',
+            framesMax:4
+        },
+        run:{
+            ImageSrc: 'assets/kenji/Run.png',
+            framesMax:8,
+        },
+        jump:{
+            ImageSrc: 'assets/kenji/Jump.png',
+            framesMax:2,
+        },
+        fall:{
+            ImageSrc: 'assets/kenji/Fall.png',
+            framesMax:2,
+        },
+        attack1:{
+            ImageSrc: 'assets/kenji/Attack1.png',
+            framesMax:4,
+        }
     }
 })
 
@@ -140,7 +179,7 @@ function animate() {
     background.update();    // Make sure to call updates so that they appear
     shop.update();
     player.update();
-    //enemy.update();
+    enemy.update();
 
 
     // Default Value
@@ -148,22 +187,48 @@ function animate() {
     enemy.velocity.x = 0;    
 
     // Player
-    player.image = player.sprites.idle.image;
+
     if (keys.a.pressed && player.lastKey === 'a') {
         player.velocity.x = -5;
-        player.image = player.sprites.run.image;
+        player.switchSprite('run');
     }
     else if (keys.d.pressed && player.lastKey === 'd') {
         player.velocity.x = 5;
-        player.image = player.sprites.run.image;
+        player.switchSprite('run');
     }
+    else {
+        player.switchSprite('idle');
+    }
+
+    // Jumping
+    if (player.velocity.y < 0) {
+        player.switchSprite('jump');
+    }
+    else if (player.velocity.y > 0) {
+        player.switchSprite('fall');
+    }
+
+
 
     // Enemey
     if (keys.ArrowLeft.pressed && enemy.lastKey === 'ArrowLeft') {
         enemy.velocity.x = -5;
+        enemy.switchSprite('run');
     }
     else if (keys.ArrowRight.pressed && enemy.lastKey === 'ArrowRight') {
         enemy.velocity.x = 5;
+        enemy.switchSprite('run');
+    }
+    else {
+        enemy.switchSprite('idle');
+    }
+
+        // Jumping
+    if (enemy.velocity.y < 0) {
+        enemy.switchSprite('jump');
+    }
+    else if (enemy.velocity.y > 0) {
+        enemy.switchSprite('fall');
     }
 
 
@@ -238,7 +303,6 @@ window.addEventListener('keydown', (event)=>{
 
         case ' ':   // spacebar
             player.attack();
-            player.isAttacking =  true;
             break
     
             // Enemy Keys
@@ -259,7 +323,6 @@ window.addEventListener('keydown', (event)=>{
 
         case 'ArrowDown':
             enemy.attack();
-            enemy.isAttacking = true;
             break
     }
 })
@@ -287,5 +350,6 @@ window.addEventListener('keyup', (event)=>{
         case 'ArrowLeft':
             keys.ArrowLeft.pressed = false;
             break
+        
     }
 })
