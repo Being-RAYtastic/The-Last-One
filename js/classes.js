@@ -11,7 +11,7 @@ class Sprite {
     }) {
         this.position = position;
         this.height = 150;
-        this.width = 50;
+        this.width = 150;
 
         this.image = new Image();
         this.image.src = ImageSrc;
@@ -69,7 +69,8 @@ class Fighter extends Sprite{
         scale = 1, 
         framesMax = 1, 
         offset = { x:0, y:0 },
-        sprites
+        sprites,
+        attackBox = { offset:{}, width: undefined, height: undefined }
     }) {
         
         super({position, ImageSrc, scale, framesMax, offset})
@@ -82,14 +83,11 @@ class Fighter extends Sprite{
         this.attackBox = {
             position: {
                 x: this.position.x,
-                y: this.position.y
+                y: this.position.y,
             } ,
-            offset:{
-                x:0,
-                y:0
-            },
-            width: 100,
-            height: 50
+            offset: attackBox.offset,
+            width: attackBox.width,
+            height: attackBox.height
         }
         this.color = color;
         this.isAttacking;
@@ -113,7 +111,10 @@ class Fighter extends Sprite{
         this.animateFrames();
         // AttackBox position updates
         this.attackBox.position.x = this.position.x + this.attackBox.offset.x;
-        this.attackBox.position.y = this.position.y;
+        this.attackBox.position.y = this.position.y + this.attackBox.offset.y;
+
+        // draw Attack Boxes // For debigging
+        // c.fillRect(this.attackBox.position.x, this.attackBox.position.y, this.attackBox.width, this.attackBox.height);
 
         // Defining how a player would move
         this.position.x += this.velocity.x;
@@ -132,9 +133,6 @@ class Fighter extends Sprite{
     attack() {
         this.switchSprite('attack1')
         this.isAttacking = true;
-        setTimeout(()=>{
-            this.isAttacking = false;
-        },100)
     }
 
     switchSprite(sprite) {
@@ -182,6 +180,14 @@ class Fighter extends Sprite{
                 if (this.image !== this.sprites.attack1.image) {
                     this.image =  this.sprites.attack1.image;
                     this.framesMax = this.sprites.attack1.framesMax;
+                    this.framesCurrent = 0;
+                }
+            break
+
+            case 'takeHit':
+                if (this.image !== this.sprites.takeHit.image) {
+                    this.image =  this.sprites.takeHit.image;
+                    this.framesMax = this.sprites.takeHit.framesMax;
                     this.framesCurrent = 0;
                 }
             break
