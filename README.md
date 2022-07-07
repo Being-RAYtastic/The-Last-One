@@ -6,6 +6,8 @@ A fighting Game made using JavaScript.
 
 Limited Time for a Fight
 
+Special One and All Attack: Emotional Damage
+
 
 # Credits
 Credits to @Chris Courses on Youtube
