@@ -39,6 +39,17 @@
         <canvas></canvas>
     </div>  
     
+
+    <!-- Sound Effects -->
+    <audio src="assets/sounds/battle.mp4" id="background-music"></audio>
+    <audio id="attack-sound" src="assets/sounds/whoosh.wav"></audio>
+    <audio src="assets/sounds/tie.mp4" id="tie-sound"></audio>
+    <audio src="assets/sounds/game_over.mp4" id="game-over"></audio>
+    <audio src="assets/sounds/WinXPerror.wav" id="win-lose-sound"></audio>
+
+
+
+
     <!-- Animation Framework 'GSAP' -->
     <script
     src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
@@ -50,8 +61,10 @@
     
     <!-- Make sure to put them in correct order -->
     <script src="js/classes.js" defer></script>
+    <script src="js/sounds.js" defer></script>
     <script src="js/utils.js" defer></script>
     <script src="index.js" defer></script>
+    
     
 </body>
 </html>
