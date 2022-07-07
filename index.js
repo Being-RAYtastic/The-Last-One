@@ -8,7 +8,6 @@ canvas.height = 576;
 
 c.fillRect(0, 0, canvas.width, canvas.height);
 
-
 const gravity = 0.7;    // Gravity
 
 const background = new Sprite({
@@ -196,10 +195,8 @@ const keys = {
     }
 }
 
-
+background_music.play();
 decreaseTimer();    // Make sure to call functions
-
-
 // Main BG Function of the Game 
 function animate() {
     window.requestAnimationFrame(animate);         // means FRAME OR FPS
@@ -208,7 +205,6 @@ function animate() {
     c.fillStyle = 'black';
     c.fillRect(0,0, canvas.width, canvas.height);   // doing so so that sprites look individual
 
-    
     // Rendering  Sprites and  Fighters
     background.update();    // Make sure to call updates so that they appear
     shop.update();

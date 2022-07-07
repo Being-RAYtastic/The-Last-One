@@ -16,19 +16,46 @@ function determineWinner({player, enemy, timerID}) {
    clearTimeout(timerID);
 
    if (player.health == enemy.health) {
-       gameOverText.innerHTML = 'Tie';
-   }
+        player.afterFightMechanics();
+        enemy.afterFightMechanics();
+        gameOverText.innerHTML = 'Tie';
+        background_music.pause();
+        tie_sound.play();
+        setTimeout(() => {
+            game_over.play();
+        }, 2800);
+    }
 
    else if (player.health > enemy.health) {
-       gameOverText.innerHTML = 'Player Wins'
-   }
+        enemy.switchSprite('death');
+        player.afterFightMechanics();
+        enemy.afterFightMechanics();
+
+        gameOverText.innerHTML = 'Player 1 Wins'
+        background_music.pause();
+
+        win_lose_sound.play();
+        setTimeout(() => {
+            game_over.play();
+        }, 1000);
+    }
 
    else if (enemy.health >  player.health) {
-       gameOverText.innerHTML = 'Enemy Wins';
-   }
+        player.switchSprite('death');
+        enemy.afterFightMechanics();
+        player.afterFightMechanics();
+
+        gameOverText.innerHTML = 'Player 2 Wins';
+        background_music.pause();
+
+        win_lose_sound.play();
+        setTimeout(() => {
+             game_over.play();
+        }, 1000);
+    }
 }
 
-let timer = 60;
+let timer = 5;
 let timerID;
 function decreaseTimer() {
    if (timer > 0) {                    //  Timer Functions

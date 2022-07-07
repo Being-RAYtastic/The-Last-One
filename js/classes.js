@@ -135,12 +135,13 @@ class Fighter extends Sprite{
     }
 
     attack() {
-        this.switchSprite('attack1')
+        this.switchSprite('attack1');
+        attack_sound.play()
         this.isAttacking = true;
     }
 
     takeHit() {
-        this.health -= 20;
+        this.health -= 5;
 
         if (this.health <= 0) {
             this.switchSprite('death');
@@ -151,6 +152,13 @@ class Fighter extends Sprite{
 
     }
 
+    afterFightMechanics() {         // Will disbale AttackBox and  health wont decrease on attacking after battle is over
+        this.attackBox.offset.x = undefined
+        this.attackBox.offset.y = undefined
+        this.attackBox.height = undefined
+        this.attackBox.width = undefined
+    }
+
 
     switchSprite(sprite) {
         // overriding all other animations 
@@ -159,7 +167,7 @@ class Fighter extends Sprite{
                 this.dead = true
             }
             return
-          }
+        }
 
         if (
             this.image === this.sprites.attack1.image
@@ -172,6 +180,8 @@ class Fighter extends Sprite{
             &&
             this.framesCurrent < this.sprites.takeHit.framesMax - 1
         ) return
+        
+        
         
         // normal animations
         switch (sprite) {
