@@ -1,0 +1,23 @@
+Player 1 Controls:
+	a  = Move Left
+	d  = Move Right
+	w  = Jump
+	Spacebar = Attack
+
+	Note: Make sure to turn OFF CapsLock
+
+
+Player 2 Controls:
+	ArrowLeft Key = Move Left
+	ArrowRight Key = Move Right
+	ArrowUp Key = Jump
+	ArrowDown Key = Attack
+
+
+
+Note: If the browser isn't able to play the background music then go to your browser settings, then search AutoPlay and either:- 
+	Enable Autoplay 
+		or
+	Paste the URL of the file in the Exceptions
+	
+	
