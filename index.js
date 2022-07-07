@@ -3,8 +3,8 @@ const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
 
 // Canvas Settings
-canvas.width = 1024;
-canvas.height = 576;
+canvas.width = 1024;            // 1024
+canvas.height = 576;            // 576
 
 c.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -32,8 +32,8 @@ const shop = new Sprite({
 // Player Object
 const player = new Fighter({
     position:{
-        x:0,
-        y:0
+        x:100,
+        y:100
     },
 
     velocity:{
@@ -75,8 +75,8 @@ const player = new Fighter({
             framesMax:2,
         },
         attack1:{
-            ImageSrc: 'assets/samuraiMack/Attack1.png',
-            framesMax:6,
+            ImageSrc: 'assets/samuraiMack/short_attack1.png',
+            framesMax:4,
         },
         takeHit:{
             ImageSrc: 'assets/samuraiMack/Take Hit - white silhouette.png',
@@ -101,7 +101,7 @@ const player = new Fighter({
 // Enemy Object
 const enemy = new Fighter({
     position:{
-        x: 400,
+        x: 800,
         y: 100
     },
 
@@ -197,6 +197,7 @@ const keys = {
 
 background_music.play();
 decreaseTimer();    // Make sure to call functions
+
 // Main BG Function of the Game 
 function animate() {
     window.requestAnimationFrame(animate);         // means FRAME OR FPS
@@ -272,7 +273,7 @@ function animate() {
             rectangle1: player,
             rectangle2: enemy
         })
-        && player.isAttacking && player.framesCurrent == 4
+        && player.isAttacking && player.framesCurrent == 2
     )   {
         enemy.takeHit();
         player.isAttacking = false;
@@ -283,7 +284,7 @@ function animate() {
     }
 
         // if player misses
-    if (player.isAttacking && player.framesCurrent == 4) {
+    if (player.isAttacking && player.framesCurrent == 2) {
         player.isAttacking = false;
     }
 
