@@ -10,3 +10,7 @@ tie_sound.volume = 0.1;
 
 const game_over = document.querySelector('#game-over');
 game_over.volume = 0.1;
+
+
+const emotional_damage_meme = document.querySelector('#emotional-damage-sound')
+emotional_damage_meme.volume = 0.3;

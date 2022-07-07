@@ -96,8 +96,9 @@ class Fighter extends Sprite{
         this.framesElapsed = 0;
         this.framesHold = 5;    // The lower the value, the faster the animation
         this.offset = offset;
-        this.sprites = sprites
+        this.sprites = sprites;
         this.dead = false;
+        this.superActivated = false;
 
 
         for (const sprite in this.sprites) {
@@ -140,6 +141,12 @@ class Fighter extends Sprite{
         this.isAttacking = true;
     }
 
+    superAttack() {
+        this.switchSprite('super_attack');
+        attack_sound.play()
+        this.superActivated = true;    
+    }
+
     takeHit() {
         this.health -= 5;
 
@@ -149,6 +156,16 @@ class Fighter extends Sprite{
         else {
             this.switchSprite('takeHit');
         }
+
+    }
+
+    emotionalDamage() {
+        this.health -= 100;
+
+        emotional_damage_meme.play()
+        const gameOverText = document.querySelector('#deathBy');
+        gameOverText.style.display = 'flex';
+        gameOverText.innerHTML = 'Emotional Damage'
 
     }
 
@@ -173,6 +190,12 @@ class Fighter extends Sprite{
             this.image === this.sprites.attack1.image
             &&
             this.framesCurrent < this.sprites.attack1.framesMax - 1
+        ) return       // Return means that we dont want to call the follwing code below
+
+        if (
+            this.image === this.sprites.super_attack.image
+            &&
+            this.framesCurrent < this.sprites.super_attack.framesMax - 1
         ) return       // Return means that we dont want to call the follwing code below
 
         if (
@@ -224,6 +247,14 @@ class Fighter extends Sprite{
                     this.framesCurrent = 0;
                 }
             break
+
+            case 'super_attack':
+                if (this.image !== this.sprites.super_attack.image) {
+                    this.image =  this.sprites.super_attack.image;
+                    this.framesMax = this.sprites.super_attack.framesMax;
+                    this.framesCurrent = 0;
+                }
+            break                
 
             case 'takeHit':
                 if (this.image !== this.sprites.takeHit.image) {
