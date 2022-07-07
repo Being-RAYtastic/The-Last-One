@@ -2,11 +2,11 @@
 A fighting Game made using JavaScript.
 
 # Features
-2 Player Game
+2 Player Offline Game
 
 Limited Time for a Fight
 
-Special One and All Attack: Emotional Damage
+Special One and All Attack: Emotional Damage  (Meme)
 
 
 # Credits
