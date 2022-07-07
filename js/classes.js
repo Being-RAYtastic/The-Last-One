@@ -163,10 +163,9 @@ class Fighter extends Sprite{
         this.health -= 100;
 
         emotional_damage_meme.play()
-        const gameOverText = document.querySelector('#deathBy');
-        gameOverText.style.display = 'flex';
-        gameOverText.innerHTML = 'Emotional Damage'
-
+        const deathStatus = document.querySelector('#deathBy');
+        deathStatus.style.display = 'flex';
+        deathStatus.innerHTML = 'Emotional Damage !'
     }
 
     afterFightMechanics() {         // Will disbale AttackBox and  health wont decrease on attacking after battle is over

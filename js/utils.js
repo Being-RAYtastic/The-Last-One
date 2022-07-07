@@ -13,7 +13,10 @@ function rectangularCollisions({rectangle1, rectangle2}){
 function determineWinner({player, enemy, timerID}) {
    const gameOverText = document.querySelector('#gameStatus');
    gameOverText.style.display = 'flex';
+
    clearTimeout(timerID);
+
+
 
    if (player.health == enemy.health) {
         player.afterFightMechanics();
@@ -73,5 +76,9 @@ function decreaseTimer() {
    
    if (timer === 0) {
        determineWinner({player, enemy, timerID})
+
+       const deathStatus = document.querySelector('#deathBy');
+       deathStatus.style.display = 'flex';
+       deathStatus.innerHTML = 'Time Out'
    }
 }
