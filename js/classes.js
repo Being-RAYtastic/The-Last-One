@@ -160,9 +160,11 @@ class Fighter extends Sprite{
     }
 
     emotionalDamage() {
-        this.health -= 100;
+        //this.health -= 100;
+        this.health = 0;
 
         emotional_damage_meme.play()
+
         const deathStatus = document.querySelector('#deathBy');
         deathStatus.style.display = 'flex';
         deathStatus.innerHTML = 'Emotional Damage !'
