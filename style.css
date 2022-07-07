@@ -106,7 +106,7 @@ canvas {
 
 #gameStatus {
     position: absolute;
-    color:crimson;
+    color: crimson;
     font-size: 22px;
     /* display: flex; */
     justify-content: center;
@@ -121,7 +121,7 @@ canvas {
 
 #deathBy {
     position: absolute;
-    color:crimson;
+    color:red;		/* crimson */
     font-size: larger;
     /* display: flex; */
     justify-content: center;
