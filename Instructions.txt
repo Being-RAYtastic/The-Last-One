@@ -3,6 +3,7 @@ Player 1 Controls:
 	d  = Move Right
 	w  = Jump
 	Spacebar = Attack
+	e  = Emotional Damage 
 
 	Note: Make sure to turn OFF CapsLock
 
@@ -12,6 +13,7 @@ Player 2 Controls:
 	ArrowRight Key = Move Right
 	ArrowUp Key = Jump
 	ArrowDown Key = Attack
+	Enter Key = Emotional Damage
 
 
 
