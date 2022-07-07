@@ -107,7 +107,7 @@ canvas {
 #gameStatus {
     position: absolute;
     color:crimson;
-    font-size: larger;
+    font-size: 22px;
     /* display: flex; */
     justify-content: center;
     align-items: center;
@@ -116,6 +116,21 @@ canvas {
     left: 0;
     right: 0;
     display: none;
+    
+}
+
+#deathBy {
+    position: absolute;
+    color:crimson;
+    font-size: larger;
+    /* display: flex; */
+    justify-content: center;
+    top:200px;
+    bottom:0;
+    left: 0;
+    right: 0;
+    display: none;
+    font-size: 32px;
     
 }
 

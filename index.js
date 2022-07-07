@@ -85,6 +85,10 @@ const player = new Fighter({
         death:{
             ImageSrc: 'assets/samuraiMack/Death.png',
             framesMax:6,
+        },
+        super_attack:{
+            ImageSrc: 'assets/samuraiMack/emotional_damage.png',
+            framesMax:4,
         }
     },
 
@@ -149,6 +153,10 @@ const enemy = new Fighter({
         death:{
             ImageSrc: 'assets/kenji/Death.png',
             framesMax:7,
+        },
+        super_attack:{
+            ImageSrc: 'assets/kenji/emotional_damage.png',
+            framesMax:4,
         }
     },
 
@@ -179,6 +187,10 @@ const keys = {
     },
 
     w:{
+        pressed: false
+    },
+
+    e:{
         pressed: false
     },
 
@@ -310,6 +322,51 @@ function animate() {
     }
 
 
+// SUPER ATTACK - EMOTIONAL DAMAGE ///////////
+
+     // Player Collision and enemy gets Hits
+     if (
+        rectangularCollisions({
+            rectangle1: player,
+            rectangle2: enemy
+        })
+        && player.superActivated && player.framesCurrent == 2
+    )   {
+        enemy.emotionalDamage();
+        player.superActivated = false;
+        // document.querySelector('#enemyHealth').style.width = enemy.health + '%';
+        gsap.to('#enemyHealth', {
+            width: enemy.health + '%'
+        })
+    }
+
+        // if player misses
+    if (player.superActivated && player.framesCurrent == 2) {
+        player.superActivated = false;
+    }
+
+     // Enemy Collision
+     if (
+        rectangularCollisions({
+            rectangle1: enemy,
+            rectangle2: player
+        })
+        && enemy.superActivated && enemy.framesCurrent == 2
+    )   {
+        player.emotionalDamage();
+        enemy.superActivated = false;
+        // document.querySelector('#playerHealth').style.width = player.health + '%';
+        gsap.to('#playerHealth', {
+            width: player.health + '%'
+        })
+    }
+
+        // if player misses
+    if (enemy.superActivated && enemy.framesCurrent == 2) {
+        enemy.superActivated = false;
+    }
+
+
     // Game Over according to healths or gets defeated
     if (enemy.health <= 0  ||  player.health <= 0) {
         determineWinner({player, enemy, timerID});
@@ -352,6 +409,10 @@ window.addEventListener('keydown', (event)=>{
             case ' ':   // spacebar
                 player.attack();
                 break
+
+            case 'e':
+                player.superAttack();
+                break
         }
     }
 
@@ -375,6 +436,10 @@ window.addEventListener('keydown', (event)=>{
 
             case 'ArrowDown':
                 enemy.attack();
+                break
+
+            case 'Enter':
+                enemy.superAttack();
                 break
         }
     }
