@@ -20,6 +20,6 @@ Player 2 Controls:
 Note: If the browser isn't able to play the background music then go to your browser settings, then search AutoPlay and either:- 
 	Enable Autoplay 
 		or
-	Paste the URL of the file in the Exceptions
+	Paste the URL of the file/website in the Exceptions List
 	
 	
