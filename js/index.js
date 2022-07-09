@@ -162,10 +162,10 @@ const enemy = new Fighter({
 
     attackBox:{
         offset:{
-            x:-155,
+            x:-160,             
             y:50
         },
-        width:155,
+        width:160,
         height:50
     }
 })
@@ -207,7 +207,7 @@ const keys = {
     }
 }
 
-background_music.play();
+
 decreaseTimer();    // Make sure to call functions
 
 // Main BG Function of the Game 
@@ -375,8 +375,7 @@ function animate() {
 
 }
 
-animate()
-
+animate();
 
 
 

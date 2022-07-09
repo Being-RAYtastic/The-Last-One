@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/icons/sword.ico">
+    <title>The-Last-One</title>
+</head>
+<body>
+
+    <!-- Red Container Div   (whole Canvas or BODY) -->
+    <div class="canvas-container">
+
+            <div class="Bars-Interface">
+
+                 <!-- Player Health -->
+                <div class="parent-playerHealth">
+                    <div id="player-health-bg"></div>
+                    <div id="playerHealth"></div>
+                </div>    
+                
+                
+                <div id="timer">10</div> <!-- Timer -->
+                
+                
+                 <!-- Enemy Health -->
+                <div class="parent-enemyHealth">
+                    <div id="enemy-health-bg"></div>
+                    <div id="enemyHealth"></div>      <!-- Will show the health decreasing --> 
+                </div> 
+                
+            
+            </div>
+
+        <div id="deathBy"></div>
+        <div id="gameStatus"></div> 
+        
+        <div class="playAgainBox">
+            <button id="play-again-btn">Play Again</button>
+            <button id="exit-btn">Exit</button>
+        </div>
+
+        <canvas></canvas>
+    </div>  
+
+    <!-- Sound Effects -->
+    <audio src="assets/sounds/battle.mp3" id="background-music"></audio>
+    <audio id="attack-sound" src="assets/sounds/whoosh.wav"></audio>
+    <audio src="assets/sounds/tie.mp3" id="tie-sound"></audio>
+    <audio src="assets/sounds/game_over.mp3" id="game-over"></audio>
+    <audio src="assets/sounds/emotional_damage.mp3" id="emotional-damage-sound"></audio>
+
+
+
+
+    <!-- Animation Framework 'GSAP' -->
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+    integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    >
+    </script>
+    
+    <!-- Make sure to put them in correct order -->
+    <script src="js/classes.js" defer></script>
+    <script src="js/sounds.js" defer></script>
+    <script src="js/utils.js" defer></script>
+    <script src="js/index.js" defer></script>
+    
+    
+</body>
+</html>

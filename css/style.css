@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Press Start 2P', cursive;;
+    font-family: 'Press Start 2P', cursive;
 }
 
 body {
@@ -133,5 +133,44 @@ canvas {
     font-size: 32px;
     
 }
+
+.playAgainBox {
+    position: absolute;
+    /* display: none; */
+    /* display: flex; */
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 0 auto;
+    top:500px;
+    bottom:0;
+    left: 0;
+    right: 0;
+    width: 500px;
+    height: 75px;
+    background-color: #818CF8;
+    border: azure;
+    outline: 3px solid azure;
+    transition: 1s ease-in;
+}
+
+#play-again-btn, #exit-btn {
+    display: none;
+    padding: 15px 15px;
+    font-size: large;
+    margin: 0 8px 0 8px;
+    width: 250px;
+    justify-content: center;
+    background-color:#F43F5E;
+    color: aliceblue;
+    border: 2px solid azure;
+    transition: background 0.3s;
+}
+
+#play-again-btn:hover, #exit-btn:hover {
+    background-color: crimson;
+    border: 3.2px solid azure;
+}
+
 
 

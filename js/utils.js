@@ -55,11 +55,33 @@ function determineWinner({player, enemy, timerID}) {
         gameOverText.innerHTML = 'Player 2 Wins';
         
         background_music.pause();
-        
         setTimeout(() => {
             game_over.play();
         }, 500);
+
     }
+    
+    setTimeout(() => {
+        const playAgainBox = document.querySelector('.playAgainBox');
+        const play_again = document.querySelector('#play-again-btn');
+        const exit_btn = document.querySelector('#exit-btn');
+    
+        playAgainBox.style.display = 'flex';
+        playAgainBox.style.opacity = 1;
+        
+        play_again.style.display = 'flex';
+        exit_btn.style.display = 'flex';
+
+        
+        play_again.addEventListener('click',()=>{
+            window.location= 'theLastOne.html';
+        })
+    
+        exit_btn.addEventListener('click',()=>{
+            window.location = 'index.html';
+        })
+    
+    }, 2000);
 
     
 }

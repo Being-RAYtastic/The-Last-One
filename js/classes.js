@@ -204,6 +204,7 @@ class Fighter extends Sprite{
             &&
             this.framesCurrent < this.sprites.takeHit.framesMax - 1
         ) return
+
         
         
         
