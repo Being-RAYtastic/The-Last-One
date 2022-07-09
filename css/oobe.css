@@ -1,0 +1,83 @@
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /* Press Start 2P, cursive*/
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap'); /* 'JetBrains Mono', monospace */
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
+    color: azure;
+}
+
+body {
+    background: url(../assets/oobe.gif);
+    background-size: cover;
+} 
+
+.menu {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    color: aliceblue;
+    margin: 1.5rem;
+    font-size: 50px;
+    color:azure;
+    text-decoration: underline;
+}
+
+#logo {
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto 1rem auto;
+    width: 300px;
+}
+
+#main-menu{ 
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+
+}
+
+button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: larger;
+    padding: 1rem 2rem;
+    margin: 1rem auto 1rem auto;
+    background-color:#F43F5E;
+    color: aliceblue;
+    border: 2px solid azure;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: crimson;
+    color: beige;
+}
+
+
+
+
+/* HELP.HTML */
+.instructions {
+    background: rgba(255, 255, 255, 0.19);
+    padding: 2rem;
+    margin: 3rem;
+    border-radius: 8px;
+}
+
+li, h2, h3 {
+    margin-left:2.5rem ;
+    font-family: 'JetBrains Mono', monospace;
+}

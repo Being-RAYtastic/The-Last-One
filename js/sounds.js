@@ -1,6 +1,8 @@
 const background_music = document.querySelector('#background-music');
 background_music.volume = 0.5;
-background_music.autoplay = true;
+//background_music.loop = true;
+// background_music.autoplay = true;
+background_music.play();
 
 const attack_sound = document.querySelector('#attack-sound');
 attack_sound.volume = 0.4;
