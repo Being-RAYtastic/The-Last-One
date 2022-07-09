@@ -171,6 +171,9 @@ canvas {
     background-color: crimson;
     border: 3.2px solid azure;
 }
+#play-again-btn:active, #exit-btn:active {
+    background-color:red ;
+}
 
 
 

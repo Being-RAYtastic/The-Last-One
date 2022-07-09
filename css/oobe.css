@@ -65,7 +65,10 @@ button:hover {
     background-color: crimson;
     color: beige;
 }
-
+ 
+button:active {
+	background-color:red ;
+}
 
 
 
