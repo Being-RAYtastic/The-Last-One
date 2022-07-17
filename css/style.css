@@ -9,7 +9,7 @@
 }
 
 body {
-    background: url(../assets/body_bg.png);
+    background: #0b1a3b;
     background-size: cover;
     overflow: hidden;
 } 
@@ -180,6 +180,11 @@ canvas {
 
 /* RESPONSIVE CSS */
 @media screen and (max-width:1115px) {
+    
+    body {
+        overflow: auto;
+    }
+
     canvas {
         width: 100vw;
     }
@@ -187,6 +192,28 @@ canvas {
     .Bars-Interface {
         width: 100%;
     }
+
+    .canvas-container {
+        width: 100%;
+    }
 }
 
+@media screen and (max-width:300px) {
+    
+    #enemy-health-bg {
+        background-color: #F43F5E;
+        height: 20px;
+    }
 
+    
+    #player-health-bg {
+        background-color: #F43F5E;
+        height: 20px;
+    }
+    
+    #timer {
+        height: 25px;
+    }
+
+
+}    

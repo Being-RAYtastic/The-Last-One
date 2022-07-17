@@ -110,17 +110,3 @@ li, h2, h3 {
     }
 }
 
-
-@media screen and (max-width:300px) {
-    #logo {
-        width: 200px;
-    }
-
-    li, h2, h3 {
-        margin: 2px;
-    }
-
-    .instructions {
-        margin: 0;
-    }
-}
