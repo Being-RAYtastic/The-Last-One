@@ -325,7 +325,7 @@ function animate() {
 // SUPER ATTACK - EMOTIONAL DAMAGE ///////////
 
      // Player Collision and enemy gets Hits
-     if (
+    if (
         rectangularCollisions({
             rectangle1: player,
             rectangle2: enemy
@@ -406,6 +406,9 @@ window.addEventListener('keydown', (event)=>{
                 break
 
             case ' ':   // spacebar
+                player.attack();
+                break
+            case 's':   // spacebar
                 player.attack();
                 break
 
