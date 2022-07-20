@@ -98,7 +98,8 @@ class Fighter extends Sprite{
         this.offset = offset;
         this.sprites = sprites;
         this.dead = false;
-        this.superActivated = false;
+        this.superAttack_Count = 0;
+        
 
 
         for (const sprite in this.sprites) {
@@ -141,10 +142,18 @@ class Fighter extends Sprite{
         this.isAttacking = true;
     }
 
+    
     superAttack() {
-        this.switchSprite('super_attack');
-        attack_sound.play()
-        this.superActivated = true;    
+        if (this.superAttack_Count == 0) {
+            
+            this.switchSprite('super_attack');
+            attack_sound.play()
+            this.superActivated = true; 
+            this.superAttack_Count++;
+        }
+        else {
+            this.attack();
+        }   
     }
 
     takeHit() {
