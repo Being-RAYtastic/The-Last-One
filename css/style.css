@@ -9,7 +9,8 @@
 }
 
 body {
-    background: #0b1a3b;
+    background: url(../assets/body_bg.webp);
+    background-blend-mode: luminosity;
     background-size: cover;
     overflow: hidden;
 } 
