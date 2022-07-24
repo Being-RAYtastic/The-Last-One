@@ -18,6 +18,8 @@ body {
 canvas {
     margin-top: 5px;
     border: 5px solid aliceblue;
+    width: 75%;
+    
 }
 
 .canvas-container {
@@ -180,10 +182,11 @@ canvas {
 
 
 /* RESPONSIVE CSS */
-@media screen and (max-width:1115px) {
+@media screen and (max-width:950px){
     
     body {
         overflow: auto;
+        background:#D8B4FE;
     }
 
     canvas {
@@ -217,4 +220,5 @@ canvas {
     }
 
 
-}    
+}
+
