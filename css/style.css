@@ -168,6 +168,7 @@ canvas {
     color: aliceblue;
     border: 2px solid azure;
     transition: background 0.3s;
+    cursor: pointer;
 }
 
 #play-again-btn:hover, #exit-btn:hover {
