@@ -60,6 +60,7 @@ button {
     color: aliceblue;
     border: 2px solid azure;
     transition: background 0.3s;
+    cursor: pointer;
 }
 
 button:hover {
