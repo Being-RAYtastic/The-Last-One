@@ -1,5 +1,6 @@
 # The-Last-One
 A fighting Game made using JavaScript.
+You can play the game [here](thelastone.netlify.app)
 
 
 # Features 
