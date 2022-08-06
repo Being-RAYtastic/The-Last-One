@@ -1,5 +1,6 @@
 # The-Last-One
 A fighting Game made using JavaScript.
+# thelastone.netlify.app
 
 # Features 
 - 2 Player Offline Game
