@@ -74,11 +74,11 @@ function determineWinner({player, enemy, timerID}) {
 
         
         play_again.addEventListener('click',()=>{
-            window.location= 'theLastOne.html';
+            location.reload();
         })
     
         exit_btn.addEventListener('click',()=>{
-            window.location = 'index.html';
+            window.location = 'menu.html';
         })
     
     }, 2000);
