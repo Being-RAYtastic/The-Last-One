@@ -4,11 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta
-      name="description"
-      content="The Last One is a fighting game made using Vanilla Javascript. Its a 2 player game in which your main motive is to win the fight. There's also a special attack called Emotional Damage that can Knockout your opponent with just one Hit."
-    />
-    
     <link rel="stylesheet" href="css/oobe.css">
     <link rel="icon" type="image/x-icon" href="assets/icons/sword.ico">
     <title>The-Last-One -- OOBE</title>
@@ -22,11 +17,21 @@
         </div>
 
         <div id="main-menu">
-            <button id="play">PLAY</button>
-            <button id="help">HELP</button>
+            <button id="menu">BATTLE</button>
+            <button id="help">&nbsp;HELP&nbsp;</button>     <!-- &nbsp; for 1 blank space-->
         </div>
     </div>  
     
-    <script src="js/oobe.js"></script>
+    <script>
+
+        const menu_btn = document.getElementById('menu');
+        menu_btn.addEventListener('click', ()=>{
+            window.location = 'menu.html';
+        })
+        const help_btn = document.getElementById('help');
+        help_btn.addEventListener('click', ()=>{
+            window.location = 'help.html';
+        })
+    </script>
 </body>
 </html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/oobe.css">
+    <link rel="icon" type="image/x-icon" href="assets/icons/sword.ico">
+    <title>The-Last-One -- Menu</title>
+</head>
+<body>
+
+    <div class="menu">
+        <div id="visuals">
+            <h1>BATTLE MODES</h1>
+            <!-- <img src="assets/icons/samurai.png" alt="samurai-icon.png" id="logo"> -->
+        </div>
+
+        <div id="main-menu">
+            <button id="play">TRADITIONAL BATTLE</button>
+            <button id="quickmode">&nbsp;QUICK ATTACK MODE</button>
+        
+        </div>
+    </div>  
+    
+    <script>
+        const play_btn = document.getElementById('play');
+        play_btn.addEventListener('click', ()=>{
+            window.location = 'theLastOne.html';
+        })
+
+        const quickmode_btn = document.getElementById('quickmode');
+        quickmode_btn.addEventListener('click', ()=>{
+            window.location = 'quickmode.html';
+        })
+    </script>
+</body>
+</html>
