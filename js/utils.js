@@ -63,19 +63,13 @@ function determineWinner({player, enemy, timerID}) {
     
     setTimeout(() => {
         const playAgainBox = document.querySelector('.playAgainBox');
-        const play_again = document.querySelector('#play-again-btn');
         const exit_btn = document.querySelector('#exit-btn');
     
         playAgainBox.style.display = 'flex';
         playAgainBox.style.opacity = 1;
         
-        play_again.style.display = 'flex';
         exit_btn.style.display = 'flex';
 
-        
-        play_again.addEventListener('click',()=>{
-            location.reload(true/false);
-        })
     
         exit_btn.addEventListener('click',()=>{
             window.location = 'menu.html';
