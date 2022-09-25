@@ -149,15 +149,15 @@ canvas {
     bottom:0;
     left: 0;
     right: 0;
-    width: 500px;
-    height: 75px;
+    width: 250px;
+    height: 70px;
     background-color: #818CF8;
     border: azure;
     outline: 3px solid azure;
     transition: 1s ease-in;
 }
 
-#play-again-btn, #exit-btn {
+#exit-btn {
     display: none;
     padding: 15px 15px;
     font-size: large;
@@ -171,11 +171,11 @@ canvas {
     cursor: pointer;
 }
 
-#play-again-btn:hover, #exit-btn:hover {
+#exit-btn:hover {
     background-color: crimson;
     border: 3.2px solid azure;
 }
-#play-again-btn:active, #exit-btn:active {
+#exit-btn:active {
     background-color:red ;
 }
 
