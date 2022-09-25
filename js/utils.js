@@ -74,7 +74,7 @@ function determineWinner({player, enemy, timerID}) {
 
         
         play_again.addEventListener('click',()=>{
-            location.reload();
+            location.reload(true/false);
         })
     
         exit_btn.addEventListener('click',()=>{
