@@ -409,8 +409,10 @@ window.addEventListener('keydown', (event)=>{
                 break
 
             case 'w':
-                player.velocity.y = -20;
-                player.lastKey = 'w';
+                if (player.position.y > 100) {
+                    player.velocity.y = -15;
+                    player.lastKey = 'w';
+                }
                 break
 
             case ' ':   // spacebar
@@ -440,8 +442,10 @@ window.addEventListener('keydown', (event)=>{
                 break
 
             case 'ArrowUp':
-                enemy.velocity.y = -20;
-                enemy.lastKey = 'ArrowUp';
+                if (enemy.position.y > 100) {
+                    enemy.velocity.y = -15;
+                    enemy.lastKey = 'ArrowUp';
+                }
                 break
 
             case 'ArrowDown':
