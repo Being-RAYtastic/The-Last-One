@@ -12,5 +12,5 @@ You can play the game at https://thelastone.netlify.app
 
 
 # Credits
-- Credits to @Chris Courses on Youtube
+- Credits to @ChrisCourses on Youtube
 - His this video helped me accomplish this project: https://youtu.be/vyqbNFMDRGQ
