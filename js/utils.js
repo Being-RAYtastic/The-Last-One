@@ -72,7 +72,7 @@ function determineWinner({player, enemy, timerID}) {
 
     
         exit_btn.addEventListener('click',()=>{
-            window.location = 'menu.html';
+            window.location = 'index.html';
         })
     
     }, 2000);
