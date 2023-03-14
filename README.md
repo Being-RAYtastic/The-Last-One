@@ -8,7 +8,6 @@ You can play the game at https://thelastone.netlify.app
 - Limited Time for a Fight
 - Special One and All Attack: Emotional Damage  (Meme)
 - Need a Keyboard to play this game as you can control characters using the keyboard only.
-- Special Game Modes
 
 
 # Credits
