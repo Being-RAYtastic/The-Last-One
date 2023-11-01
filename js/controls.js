@@ -15,6 +15,12 @@ const keys = {
     e:{
         pressed: false
     },
+    x: {
+        pressed: false
+    },
+    z: {
+        pressed: false
+    },
 
     ArrowRight:{
         pressed:false
@@ -26,13 +32,19 @@ const keys = {
 
     ArrowUp:{
         pressed:false
-    }
+    },
+    l: {
+        pressed: false
+    },
+    k: {
+        pressed: false
+    },
 }
 
 
 // Player Movements
 window.addEventListener('keydown', (event)=>{
-    console.log(event.key);
+    console.log(event.key)
 
     if (!player.dead) {
         switch  (event.key) {
@@ -65,6 +77,17 @@ window.addEventListener('keydown', (event)=>{
             case 'e':
                 player.superAttack();
                 break
+
+            
+            case 'x':
+                keys.x.pressed = true;
+                player.lastKey = 'x';
+                break 
+            case 'z':
+                keys.z.pressed = true;
+                player.lastKey = 'z';
+                break
+                
         }
     }
 
@@ -95,6 +118,15 @@ window.addEventListener('keydown', (event)=>{
             case 'Enter':
                 enemy.superAttack();
                 break
+            
+            case 'l':
+                keys.l.pressed = true;
+                player.lastKey = 'l';
+                break 
+            case 'k':
+                keys.k.pressed = true;
+                player.lastKey = 'k';
+                break
         }
     }
 
@@ -102,6 +134,7 @@ window.addEventListener('keydown', (event)=>{
 
 window.addEventListener('keyup', (event)=>{
     // console.log(event.key);
+    event.preventDefault()
 
     switch  (event.key) {
 
@@ -113,7 +146,13 @@ window.addEventListener('keyup', (event)=>{
         case 'a':
             keys.a.pressed = false;
             break
-        
+
+        case 'x':
+            keys.x.pressed = false;
+            break
+        case 'z':
+            keys.z.pressed = false;
+            break
 
             // Enemy KeysUP
         case 'ArrowRight':
@@ -122,6 +161,12 @@ window.addEventListener('keyup', (event)=>{
         
         case 'ArrowLeft':
             keys.ArrowLeft.pressed = false;
+            break
+        case 'l':
+            keys.l.pressed = false;
+            break
+        case 'k':
+            keys.k.pressed = false;
             break
         
     }
