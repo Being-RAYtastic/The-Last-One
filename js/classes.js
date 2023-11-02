@@ -99,6 +99,7 @@ class Fighter extends Sprite{
         this.sprites = sprites;
         this.dead = false;
         this.superAttack_Count = 0;
+        this.dashAttack_activated = true
         
 
 
@@ -142,6 +143,16 @@ class Fighter extends Sprite{
         this.isAttacking = true;
     }
 
+    dashAttack() {
+        if(this.dashAttack_activated) {
+            this.attack()
+            this.dashAttack_activated = false
+
+            setTimeout(() => {
+                this.dashAttack_activated = true
+            }, 5000);
+        }
+    }
     
     superAttack() {
         if (this.superAttack_Count == 0) {
