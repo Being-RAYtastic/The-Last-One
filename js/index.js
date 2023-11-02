@@ -218,17 +218,17 @@ function animate() {
     }
 
     else if (keys.x.pressed && player.lastKey === 'x') {
-        if (player.position.x < 930) {
-            player.velocity.x = 80;
-            player.attack()
+        if (player.position.x < 930 && player.dashAttack_activated) {
+            player.velocity.x = 500;
+            player.dashAttack()
             player.switchSprite('run');
         }
     }
 
     else if (keys.z.pressed && player.lastKey === 'z') {
-        if (player.position.x > 0) {
-            player.velocity.x = -80;
-            player.attack()
+        if (player.position.x > 0 && player.dashAttack_activated) {
+            player.velocity.x = -500;
+            player.dashAttack()
             player.switchSprite('run');
         }
     }
@@ -262,17 +262,17 @@ function animate() {
         }
     }
     else if (keys.l.pressed && player.lastKey === 'l') {
-        if (enemy.position.x < 930) {
-            enemy.velocity.x = 80;
-            enemy.attack()
+        if (enemy.position.x < 930 && enemy.dashAttack_activated) {
+            enemy.velocity.x = 500;
+            enemy.dashAttack()
             enemy.switchSprite('run');
         }
     }
 
     else if (keys.k.pressed && player.lastKey === 'k') {
-        if (enemy.position.x > 0) {
-            enemy.velocity.x = -80;
-            enemy.attack()
+        if (enemy.position.x > 0 && enemy.dashAttack_activated) {
+            enemy.velocity.x = -500;
+            enemy.dashAttack()
             enemy.switchSprite('run');
         }
     }
