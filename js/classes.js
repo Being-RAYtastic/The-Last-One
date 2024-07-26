@@ -120,7 +120,7 @@ class Fighter extends Sprite{
         this.attackBox.position.x = this.position.x + this.attackBox.offset.x;
         this.attackBox.position.y = this.position.y + this.attackBox.offset.y;
 
-        // draw Attack Boxes // For debigging
+        // draw Attack Boxes // For debugging
         // c.fillRect(this.attackBox.position.x, this.attackBox.position.y, this.attackBox.width, this.attackBox.height);
 
         // Defining how a player would move
@@ -143,9 +143,10 @@ class Fighter extends Sprite{
         this.isAttacking = true;
     }
 
-    dashAttack() {
+    dashAttack(velocity) {
         if(this.dashAttack_activated) {
             this.attack()
+            this.position(velocity)
             this.dashAttack_activated = false
 
             setTimeout(() => {
@@ -190,7 +191,7 @@ class Fighter extends Sprite{
         deathStatus.innerHTML = 'Emotional Damage !'
     }
 
-    afterFightMechanics() {         // Will disbale AttackBox and  health wont decrease on attacking after battle is over
+    afterFightMechanics() {         // Will disable AttackBox and  health wont decrease on attacking after battle is over
         this.attackBox.offset.x = undefined
         this.attackBox.offset.y = undefined
         this.attackBox.height = undefined
