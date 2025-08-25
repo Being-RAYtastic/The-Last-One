@@ -305,7 +305,7 @@ function animate() {
         })
         && player.isAttacking && player.framesCurrent == 2
     )   {
-        enemy.takeHit(5);
+        enemy.takeHit(2);
         player.isAttacking = false;
         // document.querySelector('#enemyHealth').style.width = enemy.health + '%';
         gsap.to('#enemyHealth', {
@@ -326,7 +326,7 @@ function animate() {
         })
         && enemy.isAttacking && enemy.framesCurrent == 2
     )   {
-        player.takeHit(5);
+        player.takeHit(2);
         enemy.isAttacking = false;
         // document.querySelector('#playerHealth').style.width = player.health + '%';
         gsap.to('#playerHealth', {
