@@ -1,6 +1,7 @@
 const bg_music_list = [
     "bw_unova_gymbattle_theme-8bit",
-    "kickback_8bit-remix"
+    "kickback_8bit-remix",
+    "johtotrainerbattle_remix"
 ]
 
 const randomly_selected_bg_music = bg_music_list[Math.floor(Math.random() * bg_music_list.length)];
